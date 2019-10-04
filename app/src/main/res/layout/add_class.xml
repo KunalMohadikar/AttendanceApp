@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CFD8DC"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/Heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Add Class"
+        android:textColor="@android:color/black"
+        android:textSize="30dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="1">
+        <EditText
+            android:id="@+id/EnterClass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Enter Class Name" />
+
+        <Button
+            android:id="@+id/button_AddClass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/mybutton_round"
+            android:text="Submit" />
+
+        <Button
+            android:id="@+id/button_viewClass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/mybutton_round"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="View Classes" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Student in the added class"
+        android:textColor="@android:color/black"
+        android:textSize="24dp"
+        android:gravity="center"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:gravity="center">
+        <EditText
+            android:id="@+id/editText_RollNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Enter Roll NO."
+            android:layout_margin="10dp"/>
+        <EditText
+            android:id="@+id/editText_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Enter Name"
+            android:layout_margin="10dp"/>
+        <Button
+            android:id="@+id/button_AddStudent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Student"
+            android:background="@drawable/mybutton_round"
+            android:padding="10dp"
+            />
+    </LinearLayout>
+
+    
+    
+    
+</LinearLayout>
