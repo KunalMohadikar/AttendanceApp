@@ -17,6 +17,7 @@ public class FirstActivity extends AppCompatActivity {
     // Creating Buttons
     Button button_markAttendance;
     Button button_addClass;
+    Button button_displayclass;
 
     //All Class Names
     static ArrayList<String> ClassNames = new ArrayList<String>();
@@ -32,6 +33,7 @@ public class FirstActivity extends AppCompatActivity {
         // declaring buttons
         button_markAttendance = findViewById(R.id.button_mark);
         button_addClass = findViewById(R.id.button_addClass);
+        button_displayclass = findViewById(R.id.button_showclass);
 
         button_markAttendance.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +47,14 @@ public class FirstActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent("Add_Class");
+                startActivity(i);
+            }
+        });
+
+        button_displayclass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent("Display_Attendence");
                 startActivity(i);
             }
         });

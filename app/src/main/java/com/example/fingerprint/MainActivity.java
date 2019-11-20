@@ -13,11 +13,12 @@ import android.hardware.fingerprint.FingerprintManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CancellationSignal;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-
-
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
     private TextView mHeadingLabel;
     private ImageView mFingerprintImage;
     private TextView mParaLabel;
+    EditText username1,password1;
+    Button Loginbtn;
+    String username;
+    String password;
     int x = 0;
 
     class FingerprintHandler1 extends FingerprintManager.AuthenticationCallback {
@@ -66,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
             this.update("You can now Access the app",true);
             Intent i = new Intent("first_filter");
             startActivity(i);
+            finish();
 
         }
 
@@ -95,6 +101,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        username = "Kunal";
+        password = "123456";
+        username1 = findViewById(R.id.username1);
+        password1 = findViewById(R.id.password1);
+        Loginbtn = findViewById(R.id.Loginbtn);
 
         mHeadingLabel = findViewById(R.id.headingLabel);
         mFingerprintImage = findViewById(R.id.fingerprintImage);
@@ -134,8 +146,23 @@ public class MainActivity extends AppCompatActivity {
                 fingerprintHandler.startAuth(fingerprintManager,null);
 
             }
-
-
         }
+        UserAuthentication();
+    }
+
+    public  void UserAuthentication(){
+        Loginbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(username1.getText().toString().equals(username) && password1.getText().toString().equals(password)){
+                    Intent i = new Intent("first_filter");
+                    startActivity(i);
+                    finish();
+                }
+                else{
+                    Toast.makeText(MainActivity.this,"username or Password wrong",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }

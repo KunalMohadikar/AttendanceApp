@@ -4,9 +4,10 @@
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/applogo"
+        android:logo="@drawable/applogo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/applogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
@@ -35,6 +36,13 @@
                 <action android:name="Add_Class" />
 
                 <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".DisplayAttendence">
+            <intent-filter>
+                <action android:name="Display_attendence" />
+
+                <category android:name="android.intent.category.VIEW" />
             </intent-filter>
         </activity>
     </application>
